@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @statistic.year %>
+</p>
+
+<p>
+  <strong>Percentage:</strong>
+  <%= @statistic.percentage %>
+</p>
+
+<%= link_to 'Edit', edit_statistic_path(@statistic) %> |
+<%= link_to 'Back', statistics_path %>

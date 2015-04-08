@@ -1,0 +1,13 @@
+<table border="1">
+	<tr>
+		<th>Year</th>
+		<th>Percentage</th>
+	</tr>
+<% @statistics.each do |statistic| %>
+	<tr>
+		<td><%= statistic.year %></td>
+		<td><%= statistic.number1 %></td>
+	</tr>
+<% end %>
+</table>
+
