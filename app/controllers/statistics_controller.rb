@@ -80,6 +80,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def statistic_params
-      params.require(:statistic).permit(:year, :number1, :number2, :number3, :number4, :number5, :number6, :number7, :number8)
+      params.require(:statistic).permit(:year, :number1, :number2, :number3, :number4, :number5, :number6, :number7, :number8, :name)
     end
 end

@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150407194055) do
     t.float    "number6"
     t.float    "number7"
     t.float    "number8"
+    t.string   "name"
   end
 
 end
