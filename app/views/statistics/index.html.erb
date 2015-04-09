@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @statistics.each do |statistic| %>
+    <% @statistics.where(name: "victimisation").find_each do |statistic| %>
       <tr>
         <td><%= statistic.year %></td>
         <td><%= statistic.number1 %></td>
