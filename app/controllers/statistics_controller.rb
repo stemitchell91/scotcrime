@@ -9,6 +9,7 @@ class StatisticsController < ApplicationController
 		format.html
 		format.csv { send_data @statistics.to_csv }
 		format.xls #{ send_data @statistics.to_csv(col_sep: "\t") }
+    format.xlsx
 	end
   end
 
