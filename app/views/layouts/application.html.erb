@@ -7,6 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <h1>ScotCrime</h1>
+  <table border="1">
+    <tr>
+      <td><%= link_to "Home", statistics_path %></td>
+      <td><a href="/statistics/victimisation">Crime Victimisation</a></td>
+      <td><a href="/statistics/perception">Perception of Crime</a></td>
+      <td><a href="/statistics/domestic">Domestic Abuse</a></td>
+      <td><a href="/statistics/racistincidents">Racist Incidents</a></td>
+      <td><a href="/statistics/homicide">Homicide</a></td>
+      <td><a href="/statistics/firearmsoffences">Firearm Offences</a></td>
+      <td><a href="/statistics/policedata">Police Strength</a></td>
+      <td><a href="/statistics/volume">Volume of Crime</a></td>
+      <td><a href="/statistics/types">Types of Crime</a></td>
+      <td><a href="/statistics/recordedpolice">Crimes Recorded</a></td>
+      <td><a href="/statistics/clearedpolice">Crimes Cleared Up</a></td>
+    <tr>
+    <tr>
+      <td><a href="/statistics/firearmscertificates">Firearm Certificates</a></td>
+      <td><a href="/statistics/seizures2010">Drug Seizures From 2010</a></td>
+      <td><a href="/statistics/seizures1996">Drug Seizures 1996-2007</a></td>
+      <td><a href="/statistics/liquor">Liquor Licenses</a></td>
+      <td><a href="/statistics/summary">Summary Court Cases</a></td>
+      <td><a href="/statistics/reconvictions">Reconvictions</a></td>
+      <td><a href="/statistics/sentencing">Sentencing</a></td>
+      <td><a href="/statistics/sentencetype">Sentence Type</a></td>
+      <td><a href="/statistics/prisonpop">Prison Population</a></td>
+      <td><a href="/statistics/cjsw">Criminal Justice Social Work</a></td>
+      <td><a href="/statistics/initiatedcourt">Civil Cases Initiated (by Court)</a></td>
+      <td><a href="/statistics/initiatedcase">Civil Cases Initiated (by Type)</a></td>
+    </tr>
+  </table><br>
+        
 
 <%= yield %>
 
