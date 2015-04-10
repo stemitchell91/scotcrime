@@ -3,16 +3,108 @@ class StatisticsController < ApplicationController
 
   # GET /statistics
   # GET /statistics.json
-  def index
-    @statistics = Statistic.order(:year)
-	respond_to do |format|
-		format.html
-		format.csv { send_data @statistics.to_csv }
-		format.xls #{ send_data @statistics.to_csv(col_sep: "\t") }
-    format.xlsx
-	end
-  end
+def index
+  @statistics = Statistic.order(:year)
+	  respond_to do |format|
+		  format.html
+		  format.csv { send_data @statistics.to_csv }
+		  format.xls
+      format.xlsx
+	 end
+end
+  
+def victimisation
+  @statistics = Statistic.all
+end
 
+def initiatedcase
+  @statistics = Statistic.all
+end
+
+def initiatedcourt
+  @statistics = Statistic.all
+end
+
+def cjsw
+  @statistics = Statistic.all
+end
+
+def clearedpolice
+  @statistics = Statistic.all
+end
+
+def recordedpolice
+  @statistics = Statistic.all
+end
+
+def domestic
+  @statistics = Statistic.all
+end
+
+def seizures1996
+  @statistics = Statistic.all
+end
+
+def seizures2010
+  @statistics = Statistic.all
+end
+
+def firearmscertificates
+  @statistics = Statistic.all
+end
+
+def firearmsoffences
+  @statistics = Statistic.all
+end
+
+def homicide
+  @statistics = Statistic.all
+end
+
+def liquor
+  @statistics = Statistic.all
+end
+
+def perception
+  @statistics = Statistic.all
+end
+
+def policedata
+  @statistics = Statistic.all
+end
+
+def prisonpop
+  @statistics = Statistic.all
+end
+
+def racistincidents
+  @statistics = Statistic.all
+end
+
+def reconvictions
+  @statistics = Statistic.all
+end
+
+def sentencetype
+  @statistics = Statistic.all
+end
+
+def sentencing
+  @statistics = Statistic.all
+end
+
+def summary
+  @statistics = Statistic.all
+end
+
+def types
+  @statistics = Statistic.all
+end
+
+def volume
+  @statistics = Statistic.all
+end  
+  
 def import
 	Statistic.import(params[:file])
 	redirect_to statistics_path, notice: "Statistics imported."

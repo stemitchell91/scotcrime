@@ -1,0 +1,23 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Crimes/Offences</th>
+      <th>No Crime or Offence</th>
+      <th>Reported to Police Force</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statistics.where(name: "domestic").find_each do |statistic| %>
+      <tr>
+        <td><%= statistic.year %></td>
+        <td><%= statistic.number1.to_i %></td>
+        <td><%= statistic.number2.to_i %></td>
+        <td><%= statistic.number3.to_i %></td>
+        <td><%= link_to 'Destroy', statistic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
