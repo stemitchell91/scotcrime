@@ -27,6 +27,7 @@ resources :statistics do
   get 'summary', :on => :collection
   get 'types', :on => :collection
   get 'volume', :on => :collection
+  get 'admin', :on => :collection
 end
 root to: 'statistics#index'
 
