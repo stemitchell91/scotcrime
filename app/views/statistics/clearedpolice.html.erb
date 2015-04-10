@@ -28,7 +28,9 @@
         <td><%= statistic.number3.to_i %></td>
         <td><%= statistic.number4.to_i %></td>
         <td><%= statistic.number5.to_i %></td>
+        <% if admin_signed_in? %>
         <td><%= link_to 'Destroy', statistic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
