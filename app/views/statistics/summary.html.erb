@@ -8,10 +8,10 @@
   </thead>
 
   <tbody>
-    <% @statistics.where(name: "victimisation").find_each do |statistic| %>
+    <% @statistics.where(name: "summary").find_each do |statistic| %>
       <tr>
         <td><%= statistic.year %></td>
-        <td><%= statistic.number1 %></td>
+        <td><%= statistic.number1.to_i %></td>
         <td><%= link_to 'Destroy', statistic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

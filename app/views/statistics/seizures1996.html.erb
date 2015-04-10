@@ -2,18 +2,19 @@
   <thead>
     <tr>
       <th>Year</th>
-      <th>Percentage (%)</th>
+      <th>Number of Seizures</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @statistics.where(name: "victimisation").find_each do |statistic| %>
+    <% @statistics.where(name: "seizures1996").find_each do |statistic| %>
       <tr>
         <td><%= statistic.year %></td>
-        <td><%= statistic.number1 %></td>
+        <td><%= statistic.number1.to_i %></td>
         <td><%= link_to 'Destroy', statistic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+

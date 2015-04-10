@@ -1,0 +1,29 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Community Payback</th>
+      <th>Probation</th>
+      <th>Community Service</th>
+      <th>Supervised Attendance</th>
+      <th>Drug Treatment and Testing</th>
+      <th>Total</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statistics.where(name: "cjsw").find_each do |statistic| %>
+      <tr>
+        <td><%= statistic.year %></td>
+        <td><%= statistic.number1.to_i %></td>
+        <td><%= statistic.number2.to_i %></td>
+        <td><%= statistic.number3.to_i %></td>
+        <td><%= statistic.number4.to_i %></td>
+        <td><%= statistic.number5.to_i %></td>
+        <td><%= statistic.number6.to_i %></td>
+        <td><%= link_to 'Destroy', statistic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
