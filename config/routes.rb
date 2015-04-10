@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  
 resources :statistics do
 	collection { post :import }
+  get 'victimisation', :on => :collection 
 end
 root to: 'statistics#index'
 

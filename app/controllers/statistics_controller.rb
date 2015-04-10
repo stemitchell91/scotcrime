@@ -3,16 +3,20 @@ class StatisticsController < ApplicationController
 
   # GET /statistics
   # GET /statistics.json
-  def index
-    @statistics = Statistic.order(:year)
-	respond_to do |format|
-		format.html
-		format.csv { send_data @statistics.to_csv }
-		format.xls #{ send_data @statistics.to_csv(col_sep: "\t") }
-    format.xlsx
-	end
-  end
+def index
+  @statistics = Statistic.order(:year)
+	  respond_to do |format|
+		  format.html
+		  format.csv { send_data @statistics.to_csv }
+		  format.xls
+      format.xlsx
+	 end
+end
 
+def victimisation
+  @statistics = Statistic.all
+end
+  
 def import
 	Statistic.import(params[:file])
 	redirect_to statistics_path, notice: "Statistics imported."
