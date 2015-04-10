@@ -4,6 +4,7 @@ gem 'roo'
 gem 'iconv'
 gem 'devise'
 gem 'rails_12factor', group: :production
+gem 'spectator-validates_email', :require => 'validates_email'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
