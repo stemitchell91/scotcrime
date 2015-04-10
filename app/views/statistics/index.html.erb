@@ -11,13 +11,24 @@
   the form below.
 </p>
 
-<h2>Import Statistics</h2>
+<% if admin_signed_in? %>
+  <h2>Import Statistics</h2>
 
-<%= form_tag import_statistics_path, multipart: true do %>
-<%= file_field_tag :file %>
-<%= submit_tag "Import" %>
+  <%= form_tag import_statistics_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+  <% end %>
 <% end %>
 
 <br>
 
+<% if admin_signed_in? %>
+  <li>
+    <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+    <%= link_to('Login', new_admin_session_path)  %>  
+  </li>
+<% end %>
 

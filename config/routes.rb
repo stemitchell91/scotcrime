@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  devise_for :admins
+  devise_for :installs
 resources :statistics do
 	collection { post :import }
   get 'victimisation', :on => :collection
