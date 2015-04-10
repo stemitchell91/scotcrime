@@ -7,8 +7,7 @@
 <p>
   ScotCrime is a website where you can read and compare a wide range of statistics from the Scottish legal system. All of the data used
   on this website is Open Data taken from the website of the <a href="http://www.gov.scot/Topics/Statistics/Browse/Crime-Justice?utm_source=website&utm_medium=navigation&utm_campaign=statistics-topics">Scottish Government</a>. You can use the links above to navigate the website and
-  view the various data sets. If you have any questions about ScotCrime or the data that we display, don't hesitate to contact us using 
-  the form below.
+  view the various data sets. Alternatively, you can use the search function below to check the years for which the above heading have data recorded. For example, search "victimisation" to see that the Crime Victimisation category contains data from 1992-2013.
 </p>
 
 <% if admin_signed_in? %>
@@ -25,6 +24,29 @@
 <% if admin_signed_in? %>
   <li>
     <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>        
-  </li>
+  </li><br>
 <% end %>
 
+<%= form_tag(statistics_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Data" %>
+<%= submit_tag "Search" %>
+<% end %><br>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statistics.each do |statistic| %>
+      <tr>
+        <td><%= statistic.year %></td>
+        <td><%= statistic.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

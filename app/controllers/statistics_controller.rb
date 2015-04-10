@@ -3,14 +3,14 @@ class StatisticsController < ApplicationController
 
   # GET /statistics
   # GET /statistics.json
-def index
-  @statistics = Statistic.order(:year)
-	  respond_to do |format|
-		  format.html
-		  format.csv { send_data @statistics.to_csv }
-		  format.xls
-      format.xlsx
-	 end
+def index  
+  
+  @statistics = Statistic.all
+  if params[:search]
+    @statistics = Statistic.search(params[:search]).order("created_at DESC")
+  else
+    @statistics = Statistic.all.order('created_at DESC')
+  end
 end
   
 def victimisation
@@ -104,7 +104,7 @@ end
 def volume
   @statistics = Statistic.all
 end  
-  
+ 
 def import
 	Statistic.import(params[:file])
 	redirect_to statistics_path, notice: "Statistics imported."
