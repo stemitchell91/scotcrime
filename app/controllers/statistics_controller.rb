@@ -12,10 +12,6 @@ def index
       format.xlsx
 	 end
 end
-
-def victimisation
-  @statistics = Statistic.all
-end
   
 def import
 	Statistic.import(params[:file])
@@ -86,4 +82,96 @@ end
     def statistic_params
       params.require(:statistic).permit(:year, :number1, :number2, :number3, :number4, :number5, :number6, :number7, :number8, :name)
     end
+end
+
+def victimisation
+  @statistics = Statistic.all
+end
+
+def initiatedcase
+  @statistics = Statistic.all
+end
+
+def initiatedcourt
+  @statistics = Statistic.all
+end
+
+def cjsw
+  @statistics = Statistic.all
+end
+
+def clearedpolice
+  @statistics = Statistic.all
+end
+
+def recordedpolice
+  @statistics = Statistic.all
+end
+
+def domestic
+  @statistics = Statistic.all
+end
+
+def seizures1996
+  @statistics = Statistic.all
+end
+
+def seizures2010
+  @statistics = Statistic.all
+end
+
+def firearmscertificates
+  @statistics = Statistic.all
+end
+
+def firearmsoffences
+  @statistics = Statistic.all
+end
+
+def homicide
+  @statistics = Statistic.all
+end
+
+def liquor
+  @statistics = Statistic.all
+end
+
+def perception
+  @statistics = Statistic.all
+end
+
+def policedata
+  @statistics = Statistic.all
+end
+
+def prisonpop
+  @statistics = Statistic.all
+end
+
+def racistincidents
+  @statistics = Statistic.all
+end
+
+def reconvictions
+  @statistics = Statistic.all
+end
+
+def sentencetype
+  @statistics = Statistic.all
+end
+
+def sentencing
+  @statistics = Statistic.all
+end
+
+def summary
+  @statistics = Statistic.all
+end
+
+def types
+  @statistics = Statistic.all
+end
+
+def volume
+  @statistics = Statistic.all
 end

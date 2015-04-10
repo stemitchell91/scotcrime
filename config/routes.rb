@@ -2,7 +2,29 @@ Rails.application.routes.draw do
   
 resources :statistics do
 	collection { post :import }
-  get 'victimisation', :on => :collection 
+  get 'victimisation', :on => :collection
+  get 'initiatedcase', :on => :collection
+  get 'initiatedcourt', :on => :collection
+  get 'cjsw', :on => :collection
+  get 'clearedpolice', :on => :collection
+  get 'recordedpolice', :on => :collection
+  get 'domestic', :on => :collection
+  get 'seizures1996', :on => :collection
+  get 'seizures2010', :on => :collection
+  get 'firearmscertificates', :on => :collection
+  get 'firearmsoffences', :on => :collection
+  get 'homicide', :on => :collection
+  get 'liquor', :on => :collection
+  get 'perception', :on => :collection
+  get 'policedata', :on => :collection
+  get 'prisonpop', :on => :collection
+  get 'racistincidents', :on => :collection
+  get 'reconvictions', :on => :collection
+  get 'sentencetype', :on => :collection
+  get 'sentencing', :on => :collection
+  get 'summary', :on => :collection
+  get 'types', :on => :collection
+  get 'volume', :on => :collection
 end
 root to: 'statistics#index'
 
